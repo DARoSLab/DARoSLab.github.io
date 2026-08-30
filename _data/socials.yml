@@ -2,7 +2,7 @@
 # Full list of supported keys: https://github.com/george-gca/jekyll-socials
 # Each key takes a username/id/handle (NOT a full URL) unless noted.
 
-email: donghyun.kim@kaist.ac.kr
+email: robot.dhkim@gmail.com
 cv_pdf: /files/cv/CV_DHKim.pdf # a path in this repo, or a full https:// URL
 scholar_userid: uVZrpMcAAAAJ # Donghyun Kim on Google Scholar
 github_username: DARoSLab
