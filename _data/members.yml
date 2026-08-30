@@ -14,7 +14,6 @@ pi:
       CV: /files/cv/CV_DHKim.pdf
 
 phd:
-  - name: Daniel Marew
   - name: Hochul Hwang
   - name: Shifan Zhu
   - name: Shangqun (Simon) Yu
@@ -32,4 +31,9 @@ undergrad:
   - name: Shlok Raval
   - name: Sabad Modi
 
-alumni: []
+# Alumni: `year` is when they left/graduated; `now` is their current position.
+alumni:
+  - name: Daniel Marew
+    degree: Ph.D. 2026
+    now: Skild AI
+

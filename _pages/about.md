@@ -8,7 +8,7 @@ subtitle: >
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: headshots/DHKim.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p><strong>Prof. Donghyun Kim</strong></p>
@@ -43,7 +43,7 @@ move dynamically through the real world. Recent projects include a
 and humanoid robots with actuated toes, and high-performance cycloidal actuators.
 
 The lab launches at KAIST's **Kim Jaechul Graduate School of AI** in **February
-2026**, continuing work previously carried out at the University of Massachusetts
+2027**, continuing work previously carried out at the University of Massachusetts
 Amherst.
 
 **Prospective students:** we are recruiting graduate students and interns. Please

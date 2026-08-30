@@ -38,6 +38,8 @@ nav_order: 4
   {% for person in list %}
   <li>
     <strong>{{ person.name }}</strong>{% if person.focus %} &mdash; {{ person.focus }}{% endif %}
+    {%- if person.degree %} &mdash; {{ person.degree }}{% endif %}
+    {%- if person.now %}, now at {{ person.now }}{% endif %}
     {% for link in person.links %} &middot; <a href="{% if link[0] == 'email' %}mailto:{% endif %}{{ link[1] }}">{{ link[0] }}</a>{% endfor %}
   </li>
   {% endfor %}

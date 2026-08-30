@@ -7,7 +7,7 @@ nav: true
 nav_order: 6
 ---
 
-The DARoS Lab is **actively recruiting** as it launches at KAIST in February 2026. Our lab's research interests covers robot hardware design and development, control, perception, navigation, machine-learning, and human-robot interaction (Please refer more details on 'Project' page). We value people who like to build real systems and run real experiments.
+The DARoS Lab is **actively recruiting** as it launches at KAIST in February 2027. Our lab's research interests covers robot hardware design and development, control, perception, navigation, machine-learning, and human-robot interaction (Please refer more details on 'Project' page). We value people who like to build real systems and run real experiments.
 
 ## Prospective graduate students (MS / PhD)
 
