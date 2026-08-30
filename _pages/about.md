@@ -3,20 +3,17 @@ layout: about
 title: About
 permalink: /
 subtitle: >
-  Dynamic and Autonomous Robotic Systems Laboratory ·
+  Dynamic and Autonomous Robotic Systems (DARoS) Laboratory ·
   <a href="https://gsai.kaist.ac.kr/">Kim Jaechul Graduate School of AI</a>, KAIST
 
 profile:
   align: right
-  image: headshots/DHKim.jpg
+  image: robots/robots.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p><strong>Prof. Donghyun Kim</strong></p>
-    <p>Kim Jaechul Graduate School of AI, KAIST</p>
+    <p><strong>We build robotic systems for humans</strong></p>
     <p>[building / room — TODO]</p>
     <p>[street address — TODO]</p>
-    <p>robot.dhkim [at] gmail.com</p>
-    <p><a href="/files/cv/CV_DHKim.pdf">Curriculum Vitae (PDF)</a></p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
