@@ -20,3 +20,9 @@ vendor
 # Python bytecode from bin/ helper scripts
 __pycache__/
 *.pyc
+
+# Office temp/lock files and binary sources
+~$*
+*.pptx
+*.pptm
+.~lock.*
