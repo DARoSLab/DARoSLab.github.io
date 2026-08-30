@@ -7,6 +7,8 @@ cv_pdf: /files/cv/CV_DHKim.pdf # a path in this repo, or a full https:// URL
 scholar_userid: uVZrpMcAAAAJ # Donghyun Kim on Google Scholar
 github_username: DARoSLab
 rss_icon: false
+youtube_id: daroslab6917       # channel handle without the "@"  ->  youtube.com/@DARoSLab
+linkedin_username: daroslab   # the part after /in/  ->  linkedin.com/in/dhkim
 
 # --- Uncomment and fill in to show these icons ---
 # youtube_id: DARoSLab       # channel handle without the "@"  ->  youtube.com/@DARoSLab
