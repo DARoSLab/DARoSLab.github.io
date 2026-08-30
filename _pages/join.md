@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /join/
-title: join us
+title: Join Us
 description: Opportunities for prospective graduate students, interns, and postdocs.
 nav: true
 nav_order: 6

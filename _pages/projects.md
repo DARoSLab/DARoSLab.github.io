@@ -1,6 +1,6 @@
 ---
 layout: page
-title: research
+title: Research
 permalink: /projects/
 description: Research directions and active projects in the DARoS Lab.
 nav: true
