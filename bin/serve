@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Local preview for the DARoS lab site.
+#
+# The system `ruby` on this machine is a conda build that cannot compile native
+# gems, so we pin to Homebrew's Ruby and a project-local gem dir. A UTF-8 locale
+# is required or bibtex-ruby chokes on accented author names.
+set -euo pipefail
+
+cd "$(dirname "$0")/.."
+
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export GEM_HOME="$PWD/.gems"
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+exec bundle exec jekyll serve --livereload "$@"
