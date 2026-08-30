@@ -16,6 +16,7 @@ profile:
     <p>[building / room — TODO]</p>
     <p>[street address — TODO]</p>
     <p>donghyun.kim [at] kaist.ac.kr</p>
+    <p><a href="/files/cv/CV_DHKim.pdf">Curriculum Vitae (PDF)</a></p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page

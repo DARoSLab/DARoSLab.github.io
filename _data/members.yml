@@ -11,6 +11,7 @@ pi:
     links:
       scholar: https://scholar.google.com/citations?user=uVZrpMcAAAAJ
       email: donghyun.kim@kaist.ac.kr
+      CV: /files/cv/CV_DHKim.pdf
 
 phd:
   - name: Daniel Marew
