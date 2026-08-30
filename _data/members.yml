@@ -1,0 +1,34 @@
+# Lab roster. Grouped by `role`; rendered on _pages/profiles.md (the People page).
+# TODO: confirm who is moving to KAIST vs. staying at UMass vs. joining as alumni.
+# `photo:` is optional — put a file in assets/img/team/ and set the filename.
+# `links:` keys become icons/links (website, scholar, github, email, linkedin).
+
+pi:
+  - name: Donghyun Kim
+    role: Principal Investigator
+    title: Assistant Professor, Kim Jaechul Graduate School of AI, KAIST
+    photo: prof_pic.jpg
+    links:
+      scholar: https://scholar.google.com/citations?user=uVZrpMcAAAAJ
+      email: donghyun.kim@kaist.ac.kr
+
+phd:
+  - name: Daniel Marew
+  - name: Hochul Hwang
+  - name: Shifan Zhu
+  - name: Shangqun (Simon) Yu
+  - name: Nisal Perera
+  - name: Qianhuang Li
+  - name: Jahir Sadik Monon
+
+masters:
+  - name: Anh Duc Tran
+
+undergrad:
+  - name: Shiven Patel
+  - name: Spencer Little
+  - name: Sangjun Park
+  - name: Shlok Raval
+  - name: Sabad Modi
+
+alumni: []
