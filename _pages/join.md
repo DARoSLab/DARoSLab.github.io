@@ -44,14 +44,6 @@ Joining as an MS/PhD student also requires admission through the
 Submitting the form is not a substitute for applying to the school, but it lets us
 know you're interested and start a conversation.
 
-## Current KAIST students
-
-Already at KAIST? Submit the form or stop by the lab. Prior coursework or projects
-in robotics, controls, optimization, or reinforcement learning is helpful but not
-required.
-
 ---
 
-*A few sentences showing you've looked at our [publications](/publications/) and
-[research](/projects/) go a long way — generic applications usually don't get a
-response.*
+*Due to the high volume of applications, I may not be able to respond to all applicants*
