@@ -28,20 +28,20 @@ latest_posts:
 ---
 
 The **Dynamic and Autonomous Robotic Systems (DARoS) Laboratory** develops robotic
-systems for practical applications, with an emphasis on the **dynamic locomotion of
-legged and humanoid systems** — the control architectures that make it possible and
-the hardware experiments that prove it out. Our goal is robots that are **faster,
-smarter, and more robust**.
-
-Our work spans model-based optimal control, reinforcement learning, whole-body
-control, actuator design, and the rapid perception and state estimation needed to
-move dynamically through the real world. Recent projects include a
-[guide-dog robot](/projects/) for blind and low-vision navigation, single-legged
-and humanoid robots with actuated toes, and high-performance cycloidal actuators.
+systems for humans by advancing the speed, intelligence, and robustness of robots.
+Our research spans mechanism design, optimization-based control, reinforcement
+learning, robot perception, and human–robot interaction — all critical to enabling
+robots to function in the real world. Recent projects include a humanoid robot with
+actuated toes (PresToe), a single-legged hopping robot (StaccaToe), and a
+[guide-dog robot](/projects/) for blind and low-vision navigation. More recently, we
+have been extending our scope to manipulation and robotic hand design.
 
 The lab launches at KAIST's **Kim Jaechul Graduate School of AI** in **February
 2027**, continuing work previously carried out at the University of Massachusetts
-Amherst.
+Amherst ([DARoS Lab @ UMass Amherst](https://www.umass.edu/robotics/daros)).
 
-**Prospective students:** we are recruiting graduate students and interns. Please
-read the [Join Us](/join/) page before reaching out.
+**Prospective students:** we are recruiting graduate students and interns. If you
+want to build humanoid and quadruped robots, develop assistive systems for people
+with disabilities, or help establish a new definition of physical intelligence,
+please submit an application through our
+[Google form](https://forms.gle/yfYEcBwrNTiVESqW8).

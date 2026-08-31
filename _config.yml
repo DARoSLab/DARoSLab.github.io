@@ -7,7 +7,7 @@ first_name: Donghyun
 middle_name:
 last_name: Kim
 contact_note: >
-  For prospective students: please read the Join Us page before emailing.
+  Prospective students: please apply through the form on the <a href="/join/">Join Us</a> page.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Dynamic and Autonomous Robotic Systems (DARoS) Laboratory at KAIST — dynamic locomotion of legged and humanoid robots, control architectures, and their experimental validation.
 footer_text: >
