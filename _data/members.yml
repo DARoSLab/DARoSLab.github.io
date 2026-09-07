@@ -6,7 +6,7 @@
 pi:
   - name: Donghyun Kim
     role: Principal Investigator
-    title: Assistant Professor, Kim Jaechul Graduate School of AI, KAIST
+    title: Associate Professor, Kim Jaechul Graduate School of AI, KAIST (Assistant Professor, CICS, UMass Amherst)
     photo: headshots/DHKim.jpg
     links:
       scholar: https://scholar.google.com/citations?user=uVZrpMcAAAAJ
@@ -18,8 +18,8 @@ phd:
   - name: Shifan Zhu
   - name: Shangqun (Simon) Yu
   - name: Nisal Perera
-  - name: Qianhuang Li
   - name: Jahir Sadik Monon
+  - name: "Qianhuang Li (co-advised with Prof. Hao Zhang, UMass Amherst)"
 
 masters:
   - name: Anh Duc Tran
