@@ -28,7 +28,7 @@ human-centered requirements to field-ready navigation and assistive perception.
     {% include figure.liquid loading="lazy" path="assets/img/guide_dog_interviews.png" title="Human-centered guide dog robot interviews" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
-<div class="caption">A human-centered guide-dog robot project informed by handlers, trainers, and BLV users.</div>
+<div class="caption">A human-centered guide-dog robot project informed by stakeholders like BLV people, guide dog handlers/trainers, and O&M specialists.</div>
 
 <h2 class="mt-5">Research and Projects</h2>
 
