@@ -2,6 +2,7 @@
 layout: page
 title: rapid perception and localization
 description: Event-camera visual odometry and state estimation for highly dynamic legged robots.
+img: assets/img/rapid_perception_overview.png
 importance: 2
 category: perception
 related_publications: false
@@ -14,6 +15,13 @@ severe blur and compromises pose estimation right when it matters most. We use
 and largely avoid this blur, but their sparse, asynchronous data stream requires
 new methods for feature extraction, association, and tracking. This project
 develops those methods and the datasets needed to validate them.
+
+<div class="row">
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/rapid_perception_overview.png" title="Rapid perception and localization pipeline" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption">Terrain scanning with an RGB-D camera and event-camera-based pose estimation identify steppable regions for foothold planning in cluttered, rubble-like terrain.</div>
 
 <h2 class="mt-5">Research and Publications</h2>
 
