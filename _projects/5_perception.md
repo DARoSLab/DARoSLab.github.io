@@ -16,8 +16,8 @@ and largely avoid this blur, but their sparse, asynchronous data stream requires
 new methods for feature extraction, association, and tracking. This project
 develops those methods and the datasets needed to validate them.
 
-<div class="row">
-  <div class="col-sm mt-3 mt-md-0">
+<div class="row justify-content-sm-center">
+  <div class="mt-3 mt-md-0" style="max-width: 70%; margin: 0 auto;">
     {% include figure.liquid loading="eager" path="assets/img/rapid_perception_overview.png" title="Rapid perception and localization pipeline" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
