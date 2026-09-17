@@ -2,7 +2,6 @@
 layout: page
 title: rapid perception and localization
 description: Event-camera visual odometry and state estimation for highly dynamic legged robots.
-img: assets/img/9.jpg
 importance: 2
 category: perception
 related_publications: false
@@ -16,13 +15,6 @@ and largely avoid this blur, but their sparse, asynchronous data stream requires
 new methods for feature extraction, association, and tracking. This project
 develops those methods and the datasets needed to validate them.
 
-<div class="row">
-  <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/9.jpg" title="Rapid perception and localization" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-<div class="caption">Placeholder image — replace with a lab photo.</div>
-
 <h2 class="mt-5">Research and Publications</h2>
 
 <h3><a href="https://ieeexplore.ieee.org/abstract/document/10342048/">Event Camera-Based Visual Odometry for Dynamic Motion Tracking of a Legged Robot Using Adaptive Time Surface</a></h3>
@@ -30,7 +22,9 @@ develops those methods and the datasets needed to validate them.
 
 <div class="row justify-content-sm-center">
   <div class="col-sm-8 mt-3 mt-md-0">
-    {% include video.liquid path="https://www.youtube.com/embed/-5ieQSh0g3M" class="img-fluid rounded z-depth-1" width="100%" height="360" %}
+    <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 0.5rem; overflow: hidden;">
+      <iframe src="https://www.youtube.com/embed/-5ieQSh0g3M" title="Adaptive time-surface visual odometry" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
   </div>
 </div>
 <div class="caption">Adaptive time-surface visual odometry running through dynamic quadruped motion.</div>
@@ -40,7 +34,9 @@ develops those methods and the datasets needed to validate them.
 
 <div class="row justify-content-sm-center">
   <div class="col-sm-8 mt-3 mt-md-0">
-    {% include video.liquid path="https://www.youtube.com/embed/4V4F1l6xmzM" class="img-fluid rounded z-depth-1" width="100%" height="360" %}
+    <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 0.5rem; overflow: hidden;">
+      <iframe src="https://www.youtube.com/embed/4V4F1l6xmzM" title="CEAR dataset overview" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
   </div>
 </div>
 <div class="caption">An overview of the CEAR dataset.</div>
