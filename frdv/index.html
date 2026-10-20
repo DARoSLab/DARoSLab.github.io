@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="description"
+      content="FRDV: Fast Motion Retargeting Pipeline for Scalable Humanoid Robot Learning. A research project from UMass Amherst, accepted to Humanoids 2026."
+    />
+    <meta property="og:title" content="FRDV — Fast Motion Retargeting for Humanoid Robot Learning" />
+    <meta
+      property="og:description"
+      content="Fast constrained kinematic retargeting with optional dynamics validation for humanoid robot learning. Humanoids 2026."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://daroslab.github.io/frdv/assets/images/social-preview.jpg" />
+    <meta property="og:url" content="https://daroslab.github.io/frdv/" />
+    <link rel="canonical" href="https://daroslab.github.io/frdv/" />
+    <title>FRDV | Fast Motion Retargeting · Humanoids 2026</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css?v=8" />
+    <script src="app.js?v=6" defer></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#abstract">Skip to abstract</a>
+    <div class="paper-hero">
+      <div class="hero-background" aria-hidden="true">
+        <video
+          id="background-video"
+          data-src="assets/videos/motion-preview.mp4"
+          poster="assets/images/motion-preview.webp"
+          width="1280"
+          height="748"
+          muted
+          loop
+          playsinline
+          preload="none"
+          tabindex="-1"
+        ></video>
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <button class="motion-control" id="motion-control" type="button" aria-controls="background-video" hidden>
+        <svg class="pause-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" /></svg>
+        <svg class="play-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="m5 3 8 5-8 5Z" /></svg>
+        <span>Play</span>
+      </button>
+      <header class="paper-header page-width">
+        <h1>
+          Fast Motion Retargeting Pipeline<br class="title-break" />
+          for Scalable Humanoid Robot Learning
+        </h1>
+        <div class="authors">
+          <span>Daniel Marew<sup>*</sup></span
+          ><span>Sangjun Park<sup>*</sup></span
+          ><span>Nisal Perera</span><span>Donghyun Kim</span>
+        </div>
+        <p class="affiliation">University of Massachusetts Amherst</p>
+        <p class="equal-contribution"><sup>*</sup> Equal contribution</p>
+        <p class="venue">Humanoids 2026</p>
+        <div class="paper-links" aria-label="Project resources">
+          <!-- Add href with the paper URL and remove aria-disabled when available. -->
+          <a id="paper-link" aria-disabled="true"
+            ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6m-6 4h6" /></svg>Paper (coming soon)</a
+          >
+          <a href="https://github.com/DARoSLab/mocap_retargeting" target="_blank" rel="noopener noreferrer"
+            ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-2 18" /></svg>Retargeting Code</a
+          >
+          <a href="https://www.youtube.com/watch?v=0G6ZX96y1DM" target="_blank" rel="noopener noreferrer"
+            ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 11 7-11 7Z" /></svg>Video</a
+          >
+          <a href="#bibtex"
+            ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h7m-7 4h7" /></svg>BibTeX</a
+          >
+        </div>
+      </header>
+    </div>
+
+    <main>
+      <section class="teaser page-width" aria-label="Project demonstration">
+        <div class="video-container" id="video-container">
+          <iframe
+            id="demo-video"
+            data-video-id="0G6ZX96y1DM"
+            title="FRDV research demonstration"
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+            referrerpolicy="strict-origin-when-cross-origin"
+            loading="eager"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p class="teaser-caption">
+          <strong>FRDV</strong> (<strong>F</strong>ast <strong>R</strong>etargeting with <strong>D</strong>ynamics <strong>V</strong>alidation) maps
+          human motion capture to diverse humanoid robots through constrained kinematic retargeting and optional dynamics validation.
+        </p>
+        <p class="release-note">
+          <strong>Code availability.</strong> The current code release includes the kinematic retargeting pipeline only; dynamics validation is not
+          included.
+        </p>
+      </section>
+
+      <section class="abstract-band" id="abstract">
+        <div class="text-width">
+          <h2>Abstract</h2>
+          <p>
+            Large-scale human motion capture datasets provide rich demonstrations for humanoid robot learning, but adapting these motions to different
+            robots remains computationally expensive and prone to artifacts. We present <strong>FRDV</strong>, a framework combining rapid constrained
+            kinematic retargeting with optional dynamics validation. A custom Sequential Quadratic Programming solver, Real-Time Iteration, and
+            parallel chunk-based processing achieve up to <strong>9,156 frames per second</strong> while incorporating robot-specific constraints to
+            reduce ground penetration and self-collision. For motions requiring further verification, contact-implicit iLQR evaluates trackability
+            under full rigid-body dynamics and actuator bounds, and refines contact artifacts such as foot floating and skating. We evaluate
+            downstream utility through motion-tracking reinforcement learning and demonstrate zero-shot sim-to-real transfer on a
+            <strong>Unitree G1</strong> humanoid.
+          </p>
+        </div>
+      </section>
+
+      <section class="content-section page-width" id="method">
+        <h2>Method overview</h2>
+        <p>
+          The full research pipeline combines a CPU-based <strong>kinematic retargeting pipeline</strong> with optional dynamics validation before
+          downstream policy learning.
+        </p>
+        <figure class="overview-figure">
+          <img
+            class="pipeline-diagram"
+            src="assets/diagrams/pipeline-overview.svg"
+            width="960"
+            height="142"
+            alt="Full FRDV pipeline: human motion capture, released kinematic retargeting, optional unreleased dynamics validation, and downstream policy learning and deployment"
+          />
+          <figcaption>
+            The full FRDV research pipeline. The released code covers kinematic retargeting; optional dynamics validation is described in the paper.
+          </figcaption>
+        </figure>
+        <div class="method-layout">
+          <figure>
+            <a href="assets/images/alignment.webp" target="_blank" rel="noopener noreferrer"
+              ><img
+                src="assets/images/alignment.webp"
+                width="965"
+                height="895"
+                loading="lazy"
+                alt="Human-to-robot morphology alignment and virtual tracking sites from the paper"
+            /></a>
+            <figcaption>Morphology matching and robot tracking sites.</figcaption>
+          </figure>
+          <div class="method-description">
+            <h3>Constrained kinematic retargeting</h3>
+            <p>
+              After morphology alignment, a specialized SQP solver tracks the human keypoints while respecting joint limits and collision constraints.
+              Temporal warm starts enable a single SQP step per frame in Real-Time Iteration mode.
+            </p>
+            <h3>Parallel motion processing</h3>
+            <p>
+              Long sequences can be divided into chunks and solved in parallel. An optional boundary refinement step reduces discontinuities when
+              independently optimized chunks are joined.
+            </p>
+            <h3>Optional dynamics validation</h3>
+            <p>
+              Contact-implicit iLQR tracks the reference under MuJoCo dynamics and actuator bounds, without a predefined contact schedule. This
+              research stage assesses trackability and can refine contact artifacts before policy training.
+            </p>
+          </div>
+        </div>
+
+        <div class="method-detail">
+          <h3>Per-frame kinematic optimization</h3>
+          <p>
+            The solver constructs a Gauss–Newton quadratic approximation from tracking, posture, and smoothing residuals. It linearizes the active
+            constraints, solves the QP, and updates the robot configuration; initial frames use additional iterations before switching to the default
+            one-step RTI mode.
+          </p>
+          <figure class="method-diagram" id="figure-solver">
+            <div class="diagram-scroll" role="group" aria-label="Scrollable per-frame kinematic solver diagram" tabindex="0">
+              <img
+                src="assets/diagrams/kinematic-solver.svg"
+                width="1100"
+                height="440"
+                loading="lazy"
+                alt="Aligned targets and the previous pose feed geometry evaluation, Gauss–Newton QP construction, and OSQP with an optional line search. The output pose warm-starts the next frame. The schematic lists the objective residuals and configurable geometric constraints."
+              />
+            </div>
+            <figcaption>
+              <strong>Per-frame SQP and temporal warm starts.</strong> Schematic of the kinematic solver; collision constraints and line search follow
+              the task configuration.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="method-detail">
+          <h3>Chunk processing and trajectory refinement</h3>
+          <p>
+            Each worker solves an independent temporal chunk with context frames around its boundaries. Results are merged in frame order, with
+            optional overlap blending. Optional refinement detects velocity and acceleration spikes and re-solves the affected groups of chunks.
+          </p>
+          <figure class="method-diagram" id="figure-parallel">
+            <div class="diagram-scroll" role="group" aria-label="Scrollable parallel chunk processing diagram" tabindex="0">
+              <img
+                src="assets/diagrams/parallel-retargeting.svg"
+                width="1100"
+                height="566"
+                loading="lazy"
+                alt="A motion is divided into overlapping temporal chunks. Independent workers initialize each chunk and switch to one-step RTI. Results are merged in time order, optionally blended and refined, and saved as robot trajectories. Widths are schematic, not measured execution times."
+              />
+            </div>
+            <figcaption>
+              <strong>Parallel temporal chunks.</strong> Hatched regions provide context around chunk boundaries. Bar widths illustrate motion-frame
+              ranges, not measured execution time.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="content-section page-width" id="results">
+        <h2>Kinematic retargeting results</h2>
+        <p>
+          On LAFAN1, FRDV achieves a mean throughput of <strong>9,156 FPS</strong> with 20 CPU workers and boundary refinement disabled. A single
+          worker achieves <strong>677 FPS</strong>; enabling boundary refinement with 20 workers yields approximately <strong>1,947 FPS</strong>.
+        </p>
+        <div class="results-figures">
+          <figure>
+            <a href="assets/figures/throughput.pdf" target="_blank" rel="noopener noreferrer"
+              ><img
+                src="assets/images/throughput.webp"
+                width="1228"
+                height="940"
+                loading="lazy"
+                alt="LAFAN1 retargeting speed benchmark across 77 sequences, showing mean FPS on a logarithmic scale and interquartile ranges"
+            /></a>
+            <figcaption>
+              <strong>Retargeting throughput.</strong> Mean FPS across 77 LAFAN1 sequences, with interquartile ranges. Click for the original PDF.
+            </figcaption>
+          </figure>
+          <figure>
+            <a href="assets/figures/solver-timing.pdf" target="_blank" rel="noopener noreferrer"
+              ><img
+                src="assets/images/solver-timing.webp"
+                width="1756"
+                height="880"
+                loading="lazy"
+                alt="Per-frame SQP timing broken down into QP preparation, QP solve, and line search across three robot platforms"
+            /></a>
+            <figcaption>
+              <strong>Solver timing.</strong> Per-frame computation across three platforms. Hatched bars include self-collision constraints.
+            </figcaption>
+          </figure>
+        </div>
+        <h3>Scaling to AMASS</h3>
+        <p>FRDV retargets 13,662 AMASS motion clips in approximately one hour with 20 workers.</p>
+        <div class="table-scroll">
+          <table>
+            <caption>
+              AMASS dataset runtime reported in the paper.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Method</th>
+                <th scope="col">Mean FPS per motion</th>
+                <th scope="col">Wall-clock time</th>
+                <th scope="col">Frames processed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">ProtoMotions (PyRoki)</th>
+                <td>57.8</td>
+                <td>45.06 h</td>
+                <td>6,147,900</td>
+              </tr>
+              <tr>
+                <th scope="row">FRDV (1 worker)</th>
+                <td>709.3</td>
+                <td>7.43 h</td>
+                <td>19,696,008</td>
+              </tr>
+              <tr class="our-result">
+                <th scope="row">FRDV (20 workers)</th>
+                <td>4,324.4</td>
+                <td>1.08 h</td>
+                <td>19,696,008</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="figure-note">
+          FRDV timing covers kinematic retargeting only. The 20-worker AMASS result excludes boundary refinement. ProtoMotions trims or pads each
+          motion to 450 frames, explaining its lower frame count. Experiments use an AMD Ryzen Threadripper 9960X CPU and an NVIDIA RTX PRO 6000
+          Blackwell Max-Q GPU; FRDV kinematics run on CPU.
+        </p>
+      </section>
+
+      <section class="content-section page-width" id="dynamics">
+        <h2>Dynamics validation</h2>
+        <p>
+          For challenging motions, contact-implicit iLQR evaluates the kinematic reference under full rigid-body dynamics. The paper demonstrates
+          single-leg hopping on both G1 and Dash and correction of foot-skating artifacts.
+        </p>
+        <figure class="method-diagram" id="figure-dynamics">
+          <div class="diagram-scroll" role="group" aria-label="Scrollable optional dynamics validation diagram" tabindex="0">
+            <img
+              src="assets/diagrams/dynamics-validation.svg"
+              width="1100"
+              height="370"
+              loading="lazy"
+              alt="A contact-implicit iLQR controller follows the kinematic reference using bounded controls. MuJoCo computes the dynamics and contacts, and returns state rollouts to the optimizer for trackability assessment. This optional research stage is not included in the current code release."
+            />
+          </div>
+          <figcaption>
+            <strong>Optional dynamics-validation loop.</strong> Conceptual schematic of the research stage described in the paper; it is not included
+            in the current code release.
+          </figcaption>
+        </figure>
+        <figure class="wide-figure">
+          <a href="assets/figures/contact-validation.pdf" target="_blank" rel="noopener noreferrer"
+            ><img
+              src="assets/images/contact-validation.webp"
+              width="1500"
+              height="540"
+              loading="lazy"
+              alt="Comparison of foot-skating artifacts in kinematic retargeting with corrected contact using contact-implicit iLQR"
+          /></a>
+          <figcaption>
+            <strong>Contact refinement on Unitree G1.</strong> Kinematic retargeting produces sliding contact; contact-implicit iLQR corrects the
+            contact behavior.
+          </figcaption>
+        </figure>
+        <figure class="hopping-figure">
+          <a href="assets/images/hopping.webp" target="_blank" rel="noopener noreferrer"
+            ><img
+              src="assets/images/hopping.webp"
+              width="1764"
+              height="1060"
+              loading="lazy"
+              alt="Contact-implicit iLQR verification on G1 and Dash with single-leg hopping snapshots and left-leg joint torque plots"
+          /></a>
+          <figcaption><strong>Dynamic motion verification.</strong> Single-leg hopping on G1 and Dash, with left-leg joint torques.</figcaption>
+        </figure>
+        <p>
+          On the first 26 s of Dance1-S1, policies trained on CI-iLQR-corrected references reduce mean global body-position tracking error from
+          <strong>103.12 to 86.58 mm</strong>. Mean anchor-relative error increases slightly, from 29.26 to 30.57 mm. Dynamics validation adds
+          substantial processing time and is applied selectively.
+        </p>
+      </section>
+
+      <section class="content-section page-width" id="hardware">
+        <h2>Sim-to-real transfer</h2>
+        <p>
+          We train a motion-tracking policy in simulation using FRDV-retargeted motions and deploy it zero-shot on a physical Unitree G1, without
+          hardware-specific fine-tuning.
+        </p>
+        <figure class="wide-figure">
+          <a href="assets/images/hardware.webp" target="_blank" rel="noopener noreferrer"
+            ><img
+              src="assets/images/hardware.webp"
+              width="1800"
+              height="456"
+              loading="lazy"
+              alt="Six successive poses of Unitree G1 executing the retargeted dance on real hardware in the lab"
+          /></a>
+          <figcaption>Unitree G1 executing the retargeted motion on hardware.</figcaption>
+        </figure>
+      </section>
+
+      <section class="content-section page-width" id="usage">
+        <h2>Getting started</h2>
+        <p>
+          The released
+          <a href="https://github.com/DARoSLab/mocap_retargeting" target="_blank" rel="noopener noreferrer">kinematic retargeting code</a> includes
+          preprocessing, interactive visualization, headless retargeting, and trajectory playback. These examples use the bundled BVH sample and the
+          Unitree G1 configuration.
+        </p>
+        <h3>Installation</h3>
+        <div class="code-block">
+          <button class="copy-code" aria-label="Copy installation commands">Copy</button>
+          <pre><code>git clone https://github.com/DARoSLab/mocap_retargeting.git
+cd mocap_retargeting
+pixi install
+pixi run pip install -e .</code></pre>
+        </div>
+        <h3>Retarget a motion</h3>
+        <div class="code-block">
+          <button class="copy-code" aria-label="Copy retargeting commands">Copy</button>
+          <pre><code># Align and preview the included motion
+pixi run process task=unitree_g1/lafan \
+  mocap_src_path=assets/mocap/sample/walk3_subject5.bvh
+
+# Run kinematic retargeting
+pixi run retarget task=unitree_g1/lafan \
+  mocap_src_path=assets/mocap/sample/walk3_subject5.bvh \
+  n_motion_chunk_workers=1 jit_compile=True
+
+# Play back the generated trajectories
+pixi run play --robot unitree_g1 \
+  --path log/kin_trajectories/unitree_g1/</code></pre>
+        </div>
+        <p class="figure-note">
+          Run commands from the repository root. Preprocessing opens an interactive Viser UI. Output trajectories are saved as
+          <code>.npy</code> files. For the highest trajectory consistency, use one worker per motion and parallelize across independent motion files.
+          RL policy training uses the separate frameworks described in the paper.
+        </p>
+      </section>
+
+      <section class="content-section page-width" id="bibtex">
+        <h2>BibTeX</h2>
+        <div class="code-block citation-block">
+          <button class="copy-code" aria-label="Copy BibTeX citation">Copy</button>
+          <pre><code>@inproceedings{marew2026frdv,
+  title = {Fast Motion Retargeting Pipeline for Scalable Humanoid Robot Learning},
+  author = {Marew, Daniel and Park, Sangjun and Perera, Nisal and Kim, Donghyun},
+  booktitle = {2026 IEEE-RAS International Conference on Humanoid Robots (Humanoids)},
+  year = {2026}
+}</code></pre>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <a href="https://daroslab.github.io/" target="_blank" rel="noopener noreferrer" aria-label="DARoS Lab website (opens in a new tab)"
+        ><img src="assets/images/daros-logo-transparent.png" width="1873" height="840" loading="lazy" alt="DARoS Lab"
+      /></a>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <noscript
+      ><style>
+        .copy-code,
+        #demo-video {
+          display: none;
+        }
+        .video-container {
+          background: url("assets/images/robots.webp") center/cover;
+        }
+      </style></noscript
+    >
+  </body>
+</html>
