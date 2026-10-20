@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="440" viewBox="0 0 1100 440" role="img" aria-labelledby="title desc">
+<title id="title">Per-frame constrained kinematic retargeting</title><desc id="desc">Aligned keypoint targets and the previous robot configuration enter a residual and constraint evaluation. A Gauss–Newton quadratic program is solved with OSQP, followed by an optional merit-function line search and an additive configuration update. Initial frames receive additional iterations; Real-Time Iteration defaults to one SQP step per frame. Objective terms and configurable constraints are summarized below.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1 9 5 0 9Z" fill="#84919e"/></marker><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse"><path d="M-1 1 1-1M0 7 7 0M6 8 8 6" stroke="#7e96ab" stroke-width="1" opacity=".65"/></pattern></defs>
+<rect width="1100" height="440" fill="white"/>
+
+<text x="30" y="29" fill="#6b7580" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="start">PER-FRAME KINEMATIC SOLVE</text>
+<rect x="30" y="59" width="220" height="132" rx="5" fill="#f5f6f8" stroke="#cbd3dc" stroke-width="1.2"/>
+<text x="140.0" y="88" fill="#30343b" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Frame inputs</text>
+<text x="140.0" y="116" fill="#6b7580" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">Aligned keypoint targets</text>
+<text x="140.0" y="140" fill="#6b7580" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">Previous robot configuration</text>
+<text x="140.0" y="164" fill="#6b7580" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">Warm-start estimate</text>
+<rect x="290" y="59" width="230" height="132" rx="5" fill="#edf3f8" stroke="#cbd3dc" stroke-width="1.2"/>
+<text x="405.0" y="88" fill="#30343b" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Evaluate geometry</text>
+<text x="405.0" y="116" fill="#6b7580" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">Site positions + Jacobians</text>
+<text x="405.0" y="140" fill="#6b7580" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">Residuals r(q)</text>
+<text x="405.0" y="164" fill="#6b7580" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">Constraints c(q)</text>
+<rect x="560" y="59" width="230" height="132" rx="5" fill="#edf3f8" stroke="#cbd3dc" stroke-width="1.2"/>
+<text x="675.0" y="88" fill="#30343b" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Build convex QP</text>
+<text x="675.0" y="116" fill="#6b7580" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">H = Jᵀ W J</text>
+<text x="675.0" y="140" fill="#6b7580" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">Linearize constraints</text>
+<text x="675.0" y="164" fill="#6b7580" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">Bounds on the step Δq</text>
+<rect x="830" y="59" width="240" height="132" rx="5" fill="#eff5ee" stroke="#cbd3dc" stroke-width="1.2"/>
+<text x="950.0" y="88" fill="#30343b" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Solve and update</text>
+<text x="950.0" y="116" fill="#6b7580" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">OSQP → step Δq</text>
+<text x="950.0" y="140" fill="#6b7580" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">Optional line search: α</text>
+<text x="950.0" y="164" fill="#6b7580" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">q ← q + α Δq</text>
+<path d="M250 125H282" fill="none" stroke="#84919e" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M520 125H552" fill="none" stroke="#84919e" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M790 125H822" fill="none" stroke="#84919e" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M950 191V239H140V193" fill="none" stroke="#84919e" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="262" y="221" width="576" height="31" rx="0" fill="white" stroke="none" stroke-width="1.2"/>
+<text x="550" y="242" fill="#52718d" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">Carry q(t) forward as the initialization for frame t + 1</text>
+<rect x="30" y="282" width="495" height="101" rx="5" fill="#fafbfc" stroke="#cbd3dc" stroke-width="1.2"/>
+<text x="48" y="310" fill="#30343b" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="600" text-anchor="start">Objective residuals</text>
+<text x="48" y="337" fill="#6b7580" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Keypoint tracking · nominal joint posture</text>
+<text x="48" y="360" fill="#6b7580" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Temporal smoothing relative to the preceding frame</text>
+<rect x="555" y="282" width="515" height="101" rx="5" fill="#fafbfc" stroke="#cbd3dc" stroke-width="1.2"/>
+<text x="573" y="310" fill="#30343b" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="600" text-anchor="start">Explicit constraints</text>
+<text x="573" y="337" fill="#6b7580" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Joint limits · ground clearance · unit root quaternion</text>
+<text x="573" y="360" fill="#6b7580" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Capsule clearance and self-collision when enabled</text>
+<text x="550" y="416" fill="#6b7580" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="middle">Initialization uses extra SQP iterations; the default RTI setting uses one SQP step per subsequent frame.</text>
+</svg>

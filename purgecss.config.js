@@ -2,7 +2,8 @@ module.exports = {
   content: ["_site/**/*.html", "_site/**/*.js"],
   css: ["_site/assets/css/*.css"],
   output: "_site/assets/css/",
-  skippedContentGlobs: ["_site/assets/**/*.html"],
+  // Standalone project pages have their own CSS and must not affect the lab stylesheet.
+  skippedContentGlobs: ["_site/assets/**/*.html", "_site/frdv/**"],
   safelist: [
     "collapse",
     "collapsing",
