@@ -60,12 +60,12 @@
         <p class="equal-contribution"><sup>*</sup> Equal contribution</p>
         <p class="venue">Humanoids 2026</p>
         <div class="paper-links" aria-label="Project resources">
-          <!-- Add href with the paper URL and remove aria-disabled when available. -->
-          <a id="paper-link" aria-disabled="true"
-            ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6m-6 4h6" /></svg>Paper (coming soon)</a
+          <a id="paper-link" href="https://arxiv.org/abs/2610.28470" target="_blank" rel="noopener noreferrer"
+            ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6m-6 4h6" /></svg>Paper</a
           >
-          <a href="https://github.com/DARoSLab/mocap_retargeting" target="_blank" rel="noopener noreferrer"
-            ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-2 18" /></svg>Retargeting Code</a
+          <!-- Restore the repository link when https://github.com/DARoSLab/mocap_retargeting is public. -->
+          <a id="code-link" aria-disabled="true"
+            ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-2 18" /></svg>Retargeting Code (coming soon)</a
           >
           <a href="https://www.youtube.com/watch?v=0G6ZX96y1DM" target="_blank" rel="noopener noreferrer"
             ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 11 7-11 7Z" /></svg>Video</a
@@ -95,7 +95,7 @@
           human motion capture to diverse humanoid robots through constrained kinematic retargeting and optional dynamics validation.
         </p>
         <p class="release-note">
-          <strong>Code availability.</strong> The current code release includes the kinematic retargeting pipeline only; dynamics validation is not
+          <strong>Code coming soon.</strong> The planned release will include the kinematic retargeting pipeline only; dynamics validation will not be
           included.
         </p>
       </section>
@@ -128,10 +128,10 @@
             src="assets/diagrams/pipeline-overview.svg"
             width="960"
             height="142"
-            alt="Full FRDV pipeline: human motion capture, released kinematic retargeting, optional unreleased dynamics validation, and downstream policy learning and deployment"
+            alt="Full FRDV pipeline: human motion capture, kinematic retargeting with code coming soon, optional unreleased dynamics validation, and downstream policy learning and deployment"
           />
           <figcaption>
-            The full FRDV research pipeline. The released code covers kinematic retargeting; optional dynamics validation is described in the paper.
+            The full FRDV research pipeline. Kinematic retargeting code is coming soon; optional dynamics validation is described in the paper.
           </figcaption>
         </figure>
         <div class="method-layout">
@@ -304,12 +304,12 @@
               width="1100"
               height="370"
               loading="lazy"
-              alt="A contact-implicit iLQR controller follows the kinematic reference using bounded controls. MuJoCo computes the dynamics and contacts, and returns state rollouts to the optimizer for trackability assessment. This optional research stage is not included in the current code release."
+              alt="A contact-implicit iLQR controller follows the kinematic reference using bounded controls. MuJoCo computes the dynamics and contacts, and returns state rollouts to the optimizer for trackability assessment. This optional research stage will not be included in the planned code release."
             />
           </div>
           <figcaption>
-            <strong>Optional dynamics-validation loop.</strong> Conceptual schematic of the research stage described in the paper; it is not included
-            in the current code release.
+            <strong>Optional dynamics-validation loop.</strong> Conceptual schematic of the research stage described in the paper; it will not be
+            included in the planned code release.
           </figcaption>
         </figure>
         <figure class="wide-figure">
@@ -363,6 +363,7 @@
         </figure>
       </section>
 
+      <!-- Code is coming soon. Uncomment the Getting started section when the repository is public.
       <section class="content-section page-width" id="usage">
         <h2>Getting started</h2>
         <p>
@@ -401,6 +402,7 @@ pixi run play --robot unitree_g1 \
           RL policy training uses the separate frameworks described in the paper.
         </p>
       </section>
+      -->
 
       <section class="content-section page-width" id="bibtex">
         <h2>BibTeX</h2>
