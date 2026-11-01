@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="370" viewBox="0 0 1100 370" role="img" aria-labelledby="title desc">
-<title id="title">Optional contact-implicit dynamics validation</title><desc id="desc">A kinematic reference is tracked with a contact-implicit iLQR controller. Actuator-bounded controls are evaluated in MuJoCo with full rigid-body dynamics and simulated contacts. State rollouts feed back to the optimizer, supporting simulation-based trackability assessment and contact refinement. This is a conceptual research-stage schematic, not a claim that this stage is included in the public code release.</desc>
+<title id="title">Optional contact-implicit dynamics validation</title><desc id="desc">A kinematic reference is tracked with a contact-implicit iLQR controller. Actuator-bounded controls are evaluated in MuJoCo with full rigid-body dynamics and simulated contacts. State rollouts feed back to the optimizer, supporting simulation-based trackability assessment and contact refinement.</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1 9 5 0 9Z" fill="#84919e"/></marker><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse"><path d="M-1 1 1-1M0 7 7 0M6 8 8 6" stroke="#7e96ab" stroke-width="1" opacity=".65"/></pattern></defs>
 <rect width="1100" height="370" fill="white"/>
 
@@ -29,5 +29,4 @@
 <rect x="30" y="302" width="470" height="47" rx="5" fill="#eff5ee" stroke="#cbd3dc" stroke-width="1.2"/>
 <text x="265" y="331" fill="#30343b" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="500" text-anchor="middle">Assess trackability and residual contact artifacts</text>
 <path d="M1022 219V326H508" fill="none" stroke="#84919e" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<text x="790" y="355" fill="#6b7580" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="middle">Described in the paper; not included in the current code release.</text>
 </svg>
