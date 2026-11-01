@@ -703,8 +703,10 @@ p code {
 
 p.release-note {
   padding: 12px 16px;
-  border-left: 3px solid #b6c8d7;
-  background: #f5f8fa;
+  border-left: 3px solid #347fc4;
+  border-radius: 4px;
+  background: #eaf3ff;
+  color: #174a82;
   font-size: 14px;
   line-height: 1.8;
 }
