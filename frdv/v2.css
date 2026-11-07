@@ -1,0 +1,460 @@
+/* FRDV 2.0 announcement. Every selector is scoped to the new section. */
+.v2-release {
+  --v2-maroon: #840028;
+  border-top: 6px solid var(--v2-maroon);
+  background: #fff;
+  padding-top: 0;
+}
+.v2-release .v2-hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: 64px;
+}
+.v2-release .v2-hero-background,
+.v2-release .v2-hero-shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.v2-release .v2-hero-background video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 40%;
+}
+.v2-release .v2-hero-shade {
+  background: linear-gradient(180deg, #ffffffb8 0%, #ffffffcc 62%, #fff 100%);
+}
+.v2-release .v2-hero > .v2-shell {
+  position: relative;
+  z-index: 1;
+}
+.v2-release .v2-shell {
+  width: min(1240px, calc(100% - 64px));
+  margin-inline: auto;
+}
+.v2-release .v2-heading {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+.v2-release .v2-eyebrow {
+  margin: 0 0 15px;
+  color: var(--v2-maroon);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+.v2-release h2 {
+  margin: 0 0 22px;
+  font-size: clamp(36px, 4.6vw, 62px);
+  font-weight: 750;
+  letter-spacing: -2px;
+  line-height: 1.15;
+}
+.v2-release h2 span {
+  color: var(--v2-maroon);
+  white-space: nowrap;
+}
+.v2-release .v2-lead {
+  max-width: 825px;
+  margin: 0 auto;
+  color: #5b6069;
+  font-size: 18px;
+  line-height: 1.85;
+  text-wrap: pretty;
+}
+.v2-release .v2-lead strong {
+  color: #30343b;
+  font-weight: 650;
+}
+.v2-release .v2-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+.v2-release .v2-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 21px;
+  border: 1px solid #dfd2d7;
+  border-radius: 7px;
+  color: var(--v2-maroon);
+  font-size: 14px;
+  font-weight: 650;
+  transition: background 0.15s;
+}
+.v2-release .v2-button:hover {
+  background: #fcf5f7;
+  text-decoration: none;
+}
+.v2-release .v2-button-primary {
+  gap: 9px;
+  color: #fff;
+  background: #000;
+  border-color: #000;
+}
+.v2-release .v2-button-primary:hover {
+  background: #24292f;
+  border-color: #24292f;
+}
+.v2-release .v2-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1020px;
+  margin: 44px auto 12px;
+}
+.v2-release .v2-metrics > div {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  text-align: center;
+}
+.v2-release .v2-metrics > div + div {
+  border-left: 1px solid #e5e0e2;
+}
+.v2-release .v2-metrics dt {
+  margin-top: 5px;
+  color: #747880;
+  font-size: 12px;
+}
+.v2-release .v2-metrics dd {
+  margin: 0;
+  color: var(--v2-maroon);
+  font-size: clamp(24px, 2.8vw, 37px);
+  font-weight: 750;
+  letter-spacing: -1px;
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
+}
+.v2-release .v2-metrics dd span {
+  font-size: 15px;
+  font-weight: 550;
+  letter-spacing: -0.2px;
+}
+.v2-release .v2-hardware-note {
+  margin: 0 0 32px;
+  color: #73777e;
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+}
+.v2-release .v2-charts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+.v2-release .v2-chart {
+  min-width: 0;
+  padding: 19px 13px 17px;
+  border: 1px solid #e6e3e5;
+  border-radius: 12px;
+  background: #fff;
+}
+.v2-release .v2-chart h3 {
+  margin: 0 0 17px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: -0.25px;
+}
+.v2-release .v2-chart-image {
+  display: block;
+  border-radius: 3px;
+}
+.v2-release .v2-chart-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.v2-release .v2-chart figcaption {
+  padding-inline: 8px;
+  font-size: 11px;
+  line-height: 1.65;
+}
+.v2-release .v2-comparison {
+  margin-top: 42px;
+  text-align: center;
+}
+.v2-release .v2-comparison h3 {
+  margin: 0 0 8px;
+  font-size: 26px;
+  letter-spacing: -0.6px;
+}
+.v2-release .v2-speedups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 24px 0 20px;
+  padding: 25px 16px;
+  border-block: 1px solid #eedee4;
+  background: #fcf7f9;
+}
+.v2-release .v2-speedups > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.v2-release .v2-speedups dt {
+  order: 1;
+  color: #30343b;
+  font-size: 16px;
+  font-weight: 650;
+}
+.v2-release .v2-speedups dd {
+  margin: 0 0 5px;
+  color: var(--v2-maroon);
+  font-size: 45px;
+  font-weight: 750;
+  letter-spacing: -1.7px;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+.v2-release .v2-speedups dd span {
+  margin-left: 2px;
+  font-size: 30px;
+  font-weight: 550;
+}
+.v2-release .v2-speedups .v2-speedup-detail {
+  order: 2;
+  margin: 4px 0 0;
+  color: #76717a;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.6;
+}
+.v2-release .v2-single-worker {
+  max-width: 960px;
+  margin: 22px auto 0;
+  font-size: 15px;
+  line-height: 1.9;
+}
+.v2-release .v2-benchmark-note {
+  margin: 23px auto 0;
+  max-width: 1120px;
+  color: #70747c;
+  font-size: 12px;
+  line-height: 1.9;
+  text-align: left;
+}
+.v2-release .v2-benchmark-note a {
+  color: var(--v2-maroon);
+  white-space: nowrap;
+}
+.v2-release .v2-technical {
+  margin-top: 49px;
+  padding-top: 36px;
+  border-top: 1px solid #e6e3e5;
+}
+.v2-release .v2-technical-heading {
+  max-width: 860px;
+}
+.v2-release .v2-technical-heading .v2-eyebrow {
+  margin-bottom: 10px;
+}
+.v2-release .v2-technical-heading h3 {
+  margin: 0 0 13px;
+  font-size: 30px;
+  letter-spacing: -0.7px;
+}
+.v2-release .v2-technical-heading > p:last-child {
+  margin: 0;
+  color: #60666f;
+  font-size: 15px;
+  line-height: 1.9;
+}
+.v2-release .v2-technical-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  margin-top: 29px;
+}
+.v2-release .v2-step {
+  display: inline-block;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #d4a3b2;
+  color: var(--v2-maroon);
+  font: 600 13px/1.3 var(--mono);
+}
+.v2-release .v2-technical-grid h4 {
+  margin: 17px 0 11px;
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.5;
+  letter-spacing: -0.25px;
+}
+.v2-release .v2-technical-grid p {
+  margin: 0;
+  color: #666c75;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.v2-release .v2-practical {
+  margin: 31px 0 0;
+  padding: 21px 24px;
+  border-left: 3px solid var(--v2-maroon);
+  background: #f7f7f8;
+  color: #5d626c;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.v2-release .v2-original-divider {
+  width: 100%;
+  margin-top: 42px;
+  padding: 30px 0 32px;
+  background: #30343b;
+  color: #fff;
+}
+.v2-release .v2-divider-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: min(1240px, calc(100% - 40px));
+  margin-inline: auto;
+  text-align: center;
+}
+.v2-release .v2-original-divider h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+}
+.v2-release .v2-original-divider p {
+  margin: 0;
+  color: #e1e4e8;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.v2-release .v2-divider-arrow {
+  display: block;
+  color: #e1e4e8;
+  font-size: 26px;
+  line-height: 1;
+}
+@media (max-width: 900px) {
+  .v2-release .v2-hero {
+    padding-top: 45px;
+  }
+  .v2-release .v2-shell {
+    width: calc(100% - 40px);
+  }
+  .v2-release .v2-lead {
+    font-size: 16px;
+  }
+  .v2-release .v2-metrics dd span {
+    display: block;
+    margin-top: 3px;
+    font-size: 13px;
+  }
+  .v2-release .v2-technical-grid {
+    gap: 20px;
+  }
+}
+@media (max-width: 700px) {
+  .v2-release h2 {
+    font-size: 39px;
+    letter-spacing: -1.2px;
+  }
+  .v2-release .v2-eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.4px;
+  }
+  .v2-release .v2-charts {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .v2-release .v2-chart {
+    padding-inline: 11px;
+  }
+  .v2-release .v2-metrics {
+    gap: 6px;
+    margin: 33px 0 12px;
+  }
+  .v2-release .v2-metrics > div {
+    padding-inline: 4px;
+  }
+  .v2-release .v2-metrics dt {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+  .v2-release .v2-metrics dd {
+    font-size: 26px;
+  }
+  .v2-release .v2-speedups {
+    gap: 10px;
+    padding-inline: 7px;
+  }
+  .v2-release .v2-speedups dd {
+    font-size: 35px;
+  }
+  .v2-release .v2-speedups dd span {
+    font-size: 24px;
+  }
+  .v2-release .v2-speedups dt {
+    font-size: 13px;
+  }
+  .v2-release .v2-speedups .v2-speedup-detail {
+    font-size: 10px;
+  }
+  .v2-release .v2-comparison h3 {
+    font-size: 23px;
+  }
+  .v2-release .v2-single-worker {
+    font-size: 14px;
+    text-align: left;
+  }
+  .v2-release .v2-technical-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+  }
+  .v2-release .v2-technical-heading h3 {
+    font-size: 26px;
+  }
+  .v2-release .v2-technical-grid h4 {
+    margin-top: 12px;
+  }
+  .v2-release .v2-practical {
+    padding: 18px;
+    font-size: 13px;
+  }
+  .v2-release .v2-original-divider {
+    margin-top: 38px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v2-release .v2-button {
+    transition: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .v2-release .v2-original-divider {
+    padding: 26px 0 28px;
+  }
+  .v2-release .v2-original-divider h2 {
+    font-size: 28px;
+  }
+  .v2-release .v2-original-divider p {
+    font-size: 13px;
+  }
+}
+
+.v2-release .v2-github-mark {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: currentColor;
+}
