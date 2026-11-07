@@ -21,10 +21,166 @@
     <title>FRDV | Fast Motion Retargeting · Humanoids 2026</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css?v=9" />
+    <link rel="stylesheet" href="v2.css?v=1" />
     <script src="app.js?v=6" defer></script>
+    <script src="v2.js?v=1" defer></script>
   </head>
   <body id="top">
     <a class="skip-link" href="#abstract">Skip to abstract</a>
+    <!-- FRDV 2.0 release announcement -->
+    <section class="v2-release" id="frdv-2" aria-labelledby="v2-title">
+      <div class="v2-hero">
+        <div class="v2-hero-background" aria-hidden="true">
+          <video
+            id="v2-background-video"
+            data-src="assets/videos/frdv-2-motion-preview.mp4"
+            poster="assets/images/frdv-2-motion-preview.webp"
+            width="1280"
+            height="580"
+            muted
+            loop
+            playsinline
+            preload="none"
+            tabindex="-1"
+          ></video>
+        </div>
+        <div class="v2-hero-shade" aria-hidden="true"></div>
+        <button class="motion-control" id="v2-motion-control" type="button" aria-controls="v2-background-video" hidden>
+          <svg class="pause-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" /></svg>
+          <svg class="play-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="m5 3 8 5-8 5Z" /></svg>
+          <span>Play</span>
+        </button>
+        <div class="v2-shell">
+          <header class="v2-heading">
+            <h2 id="v2-title">Introducing <span>FRDV 2.0</span></h2>
+            <p class="v2-lead">
+              Retarget all <strong>77 LAFAN1 motions — 496,672 frames — onto Unitree G1</strong> in <strong>0.987 seconds</strong>.
+            </p>
+            <div class="v2-actions" aria-label="FRDV 2.0 resources">
+              <a class="v2-button v2-button-primary" href="https://github.com/DARoSLab/FRDV/tree/v2" target="_blank" rel="noopener noreferrer">
+                <svg class="v2-github-mark" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+                GitHub <span aria-hidden="true">↗</span>
+              </a>
+              <a class="v2-button" href="https://github.com/DARoSLab/FRDV/tree/v2#quick-start" target="_blank" rel="noopener noreferrer">
+                Setup &amp; examples <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </header>
+
+          <dl class="v2-metrics" aria-label="FRDV 2.0 warm benchmark, 8 workers">
+            <div><dt>Warm processing throughput</dt><dd>503,289 <span>FPS</span></dd></div>
+            <div><dt>All 496,672 frames</dt><dd>0.987 <span>seconds</span></dd></div>
+            <div><dt>Aggregate processing time</dt><dd>1.99 <span>µs/frame</span></dd></div>
+          </dl>
+          <p class="v2-hardware-note">Tested on Apple M1 CPU</p>
+        </div>
+      </div>
+
+      <div class="v2-shell">
+        <div class="v2-charts" aria-label="LAFAN1 benchmark comparisons">
+          <figure class="v2-chart">
+            <h3>More motion per second</h3>
+            <a class="v2-chart-image" href="assets/images/frdv-2-fps.png" target="_blank" rel="noopener noreferrer"
+              aria-label="Open full-size FPS comparison chart">
+              <img src="assets/images/frdv-2-fps.png" width="2509" height="1938" decoding="async"
+                alt="Warm LAFAN1 throughput on Apple M1. FRDV 2.0: 503,289 FPS with 8 workers and 105,127 with 1. FRAX: 30,090 with 8 CPU devices and 6,848 with 1. GMR: 2,300 with 8 workers and 551 with 1. FRDV 1.0: 4,053 with 8 chunk workers and refinement off, 1,436 with refinement on, 5,305 with 8 file workers, and 1,087 with 1 worker." />
+            </a>
+            <figcaption>Higher is faster. Click the chart to view it full size.</figcaption>
+          </figure>
+          <figure class="v2-chart">
+            <h3>Less time per frame</h3>
+            <a class="v2-chart-image" href="assets/images/frdv-2-us-per-frame.png" target="_blank" rel="noopener noreferrer"
+              aria-label="Open full-size microseconds per frame comparison chart">
+              <img src="assets/images/frdv-2-us-per-frame.png" width="2509" height="1938" decoding="async"
+                alt="Warm processing microseconds per frame on Apple M1, lower is faster. FRDV 2.0: 1.99 with 8 workers and 9.51 with 1. FRAX: 33.23 with 8 CPU devices and 146.03 with 1. GMR: 434.86 with 8 workers and 1,813.56 with 1. FRDV 1.0: 246.76 with 8 chunk workers and refinement off, 696.61 with refinement on, 188.49 with 8 file workers, and 919.63 with 1 worker." />
+            </a>
+            <figcaption>Lower is faster. Parallel values are aggregate wall time per frame.</figcaption>
+          </figure>
+        </div>
+
+        <div class="v2-comparison">
+          <h3>Benchmark comparison</h3>
+          <dl class="v2-speedups">
+            <div><dt>vs GMR</dt><dd>219<span>×</span></dd><dd class="v2-speedup-detail">8 file workers</dd></div>
+            <div><dt>vs FRAX</dt><dd>16.7<span>×</span></dd><dd class="v2-speedup-detail">8 JAX CPU devices</dd></div>
+            <div><dt>vs FRDV 1.0</dt><dd>95<span>×</span></dd><dd class="v2-speedup-detail">8 file workers · fastest measured variant</dd></div>
+          </dl>
+          <p class="v2-single-worker">
+            FRDV 2.0 with one worker reaches <strong>105,127 FPS</strong> (<strong>9.51 µs/frame</strong>).
+            Even this slowest tested FRDV 2.0 configuration exceeds every competing setup tested,
+            including their fastest 8-worker/device runs. Its throughput is <strong>3.49×</strong>
+            that of the fastest competing result, FRAX with 8 CPU devices, in this warm LAFAN1 benchmark.
+          </p>
+        </div>
+
+        <p class="v2-benchmark-note">
+          <strong>What is timed:</strong> one warm pass over all 77 LAFAN1 motions on an Apple M1
+          (8 CPU cores, 8 GiB RAM), using the official GMR and FRAX code. Processing includes loading,
+          target preparation, kinematic retargeting, and enabled cleanup; shared startup, compilation,
+          and saving are excluded. FPS is total original frames divided by elapsed processing time;
+          µs/frame is its reciprocal, not isolated single-frame latency. Configurations run separately;
+          each pipeline retains its configured tasks and constraints. The FRDV 1.0 comparison uses its
+          fastest measured variant: an external 8-file-worker pool without chunking or boundary refinement.
+          These are single-run throughput
+          measurements, not a comparison of identical tracking objectives or motion quality.
+          <a href="https://github.com/DARoSLab/FRDV/blob/v2/benchmarks/benchmark_nov_8_2026.md" target="_blank" rel="noopener noreferrer">Timing details ↗</a>
+        </p>
+
+        <div class="v2-technical">
+          <div class="v2-technical-heading">
+            <p class="v2-eyebrow">Technical details</p>
+            <h3>What changed in FRDV 2.0</h3>
+            <p>
+              FRDV 2.0 keeps constrained per-frame SQP, temporal warm starts, and robot joint limits.
+              The execution path is rebuilt around the small, repeated problems that motion
+              retargeting actually solves.
+            </p>
+          </div>
+          <div class="v2-technical-grid">
+            <article>
+              <span class="v2-step" aria-hidden="true">01</span>
+              <h4>A whole clip in native C</h4>
+              <p>
+                Forward kinematics, Jacobians, Gauss–Newton QP construction, line search, and the
+                frame loop run inside one compiled whole-clip call. Preallocated workspaces reuse
+                memory across frames, avoiding repeated Python calls and temporary allocations.
+              </p>
+            </article>
+            <article>
+              <span class="v2-step" aria-hidden="true">02</span>
+              <h4>A QP solver built for IK</h4>
+              <p>
+                A dense Goldfarb–Idnani active-set solver replaces the previous general-purpose
+                OSQP path. It reuses the active constraint set between neighboring frames,
+                matching the small, closely related QPs encountered along a motion.
+              </p>
+            </article>
+            <article>
+              <span class="v2-step" aria-hidden="true">03</span>
+              <h4>Parallel motions, continuous clips</h4>
+              <p>
+                Native calls release Python’s GIL, so threads solve different files concurrently
+                with a workspace per worker. Each clip keeps its temporal history: no default
+                within-clip chunking, process-to-process trajectory copying, or chunk-boundary
+                stitching. Enabled despike cleanup stays in the measured pipeline.
+              </p>
+            </article>
+          </div>
+        </div>
+
+      </div>
+      <section class="v2-original-divider" aria-labelledby="frdv-v1-title">
+        <div class="v2-divider-content">
+          <h2 id="frdv-v1-title">FRDV 1.0</h2>
+          <p>You are now viewing the original FRDV paper &amp; research results.</p>
+          <span class="v2-divider-arrow" aria-hidden="true">↓</span>
+        </div>
+      </section>
+    </section>
+
+    <!-- End FRDV 2.0 release announcement -->
     <div class="paper-hero">
       <div class="hero-background" aria-hidden="true">
         <video
